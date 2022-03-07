@@ -14,6 +14,9 @@ jobs:
   build:
     # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
+    env:
+      JVM_OPTS: -Xmx6G
+
     steps:
     
     # Setup Java environment in order to build the Android app.
@@ -25,8 +28,7 @@ jobs:
     # Setup the flutter environment.
     - uses: subosito/flutter-action@v1
       with:
-        channel: 'stable' # 'dev', 'alpha', default to: 'stable'
-        # flutter-version: '1.27.x' # you can also specify exact version of flutter
+        flutter-version: '1.12.x' # you can also specify exact version of flutter
     
     # Get flutter dependencies.
     - run: flutter pub get
