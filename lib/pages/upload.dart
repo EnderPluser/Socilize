@@ -27,14 +27,14 @@ class _UploadState extends State<Upload> with AutomaticKeepAliveClientMixin{
   String postId = Uuid().v4();
   handleTakePhoto() async{
     Navigator.pop(context);
-    File file =await ImagePicker.pickImage(source: ImageSource.camera);
+    File file =await ImagePicker.getImage(source: ImageSource.camera);
     setState(() {
       this.file =file;
     });
   }
   handleGallaryPhoto() async{
     Navigator.pop(context);
-    File file =await ImagePicker.pickImage(source: ImageSource.gallery,);
+    File file =await ImagePicker.getImage(source: ImageSource.gallery,);
     setState(() {
       this.file =file;
     });
